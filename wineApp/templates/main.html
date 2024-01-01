@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    body {
+        background-image: url("{% static 'images/home_bg2.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .custom-position {
+        position: absolute;
+        top: 48%; /* Adjust these values according to your needs */
+        left: 83.3%;
+        transform: translate(-50%, -50%);
+    }
+
+    .custom-input-label {
+        background-color: #EB216B; /* Change the background color */
+        color: #DDD2D8; /* Change the text color */
+    }
+
+    .custom-input{
+        background-color: #1BD6B7; /* Change the background color */
+        color: #EFEFEF;
+    }
+
+
+    .custom-button {
+        background-color: white; /* Default background color */
+        border: 2px solid #B010EC; /* Purple border */
+        color: #B010EC; /* Text color */
+        transition: all 0.3s ease; /* Smooth transition for all properties */
+    }
+
+    /* Change button styles on hover */
+    .custom-button:hover {
+        background-color: #8C4EE5; /* Purple background color on hover */
+        color: white; /* White text color on hover */
+        border-color: white; /* White border color on hover */
+        border-radius : 20px;
+    }
+    
+</style>
+
+<div class="container-fluid mt-3">
+    <div class="row row d-flex justify-content   ">
+        <div class="col-md-4  form-position">
+            <!-- Input Form -->
+            <form action="" method="POST">
+                {% csrf_token %}
+                
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text  custom-input-label">Fixed Acidity</span>
+                    <input type="number" required step="0.01" class="form-control custom-input " placeholder="0.0"  aria-label="Username" name="fixed_acidity">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Volatile Acidity</span>
+                    <input type="number" required step="0.01" class="form-control custom-input" placeholder="0.0" aria-label="Server" name="volatile_acidity">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Citric Acid</span>
+                    <input type="number" required step="0.01" class="form-control custom-input" placeholder="0.0"  aria-label="Username" name="citric_acid">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Residual Sugar</span>
+                    <input type="number" required step="0.01" class="form-control custom-input" placeholder="0.0" aria-label="Server" name="residual_sugar">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Chlorides</span>
+                    <input type="number" required step="0.001" class="form-control custom-input" placeholder="0.0"  aria-label="Username" name="chlorides">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Free Sulfur Dioxide</span>
+                    <input type="number" required step="0.01" class="form-control custom-input" placeholder="0.0" aria-label="Server" name="free_sulphur">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Total Sulfur Dioxide</span>
+                    <input type="number" required step="0.01" class="form-control custom-input" placeholder="0.0" aria-label="Server" name="total_sulphur">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Density</span>
+                    <input type="number" required step="0.001" class="form-control custom-input" placeholder="0.0" aria-label="Server" name="density">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">pH</span>
+                    <input type="number" required step="0.01" class="form-control custom-input" placeholder="0.0" aria-label="Server" name="pH">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Sulphates</span>
+                    <input type="number" required step="0.01" class="form-control custom-input" placeholder="0.0" aria-label="Server" name="sulphates">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text custom-input-label">Alcohol</span>
+                    <input type="number" required step="0.01" class="form-control custom-input" placeholder="0.0" aria-label="Server" name="alcohol">
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-right: 280px;">
+                    <input  class="custom-button btn btn-primary" type="submit" value="Submit">
+                </div>              
+        </div>
+        <div class="col-md-4 justify-content-end my-auto  custom-position">
+            
+            {% if quality_score == 0 or quality_score == 1 %}
+                <div class="card">
+                    <div class="card-header">
+                        <span class="mx-4"><strong>Quality Score:</strong> {{ quality_score }}</span>
+
+                        {% if quality_score == 0 %}
+                            <span><strong>RESULT: </strong>bad <img src="{% static 'images/cross.jpeg' %}" alt="Logo" width="30" height="30" class="d-inline-block mx-2"></span>
+
+                        {% else %}
+                            <span><strong>RESULT: </strong>good <img src="{% static 'images/check.webp' %}" alt="Logo" width="30" height="30" class="d-inline-block mx-2"></span>
+                        {% endif %}
+
+
+                    </div>
+                    <div class="card-body">
+                        {% if quality_score == 0 %}
+                            <img src="{% static 'images/wine2.jpeg' %}" class="img-fluid" alt="...">
+                        {% else %}
+                            <img src="{% static 'images/wine1.jpg' %}" class="img-fluid" alt="...">
+                        {% endif %}
+                        
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="card">
+                    <div class="card-header">
+                        <span class="mx-4"><strong>Quality Score:</strong> {{ quality_score }}</span>
+
+                        <span><strong>RESULT: </strong>None</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <img src="{% static 'images/nodata2.jpg' %}" class="img-fluid" alt="..." width="250" height="250">
+                          </div>
+                          <div class="col-md-3 my-auto">
+                            <p>Enter data to to check wine quality</p>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                
+            {% endif %}
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        const inputs = document.querySelectorAll('.custom-input');
+        let isValid = true;
+
+        inputs.forEach(input => {
+            // Validate each input value with a regex pattern
+            const value = input.value.trim();
+            const regex = /^\d+(\.\d+)?$/; // Regex to allow any number of decimal points
+
+            if (!regex.test(value)) {
+                isValid = false;
+                input.classList.add('is-invalid'); // Add a visual cue for invalid input
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+
+        return isValid;
+    }
+</script>
+
+{% endblock content %}

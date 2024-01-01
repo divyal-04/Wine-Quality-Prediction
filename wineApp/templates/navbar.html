@@ -1,0 +1,34 @@
+{% load static %}
+
+<style>
+  .navbar {
+    padding-top: 0.2rem; /* Adjust the padding as needed */
+    padding-bottom: 0.2rem; /* Adjust the padding as needed */
+    height: 70px; /* Adjust the padding as needed */
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+    <div class="container-fluid d-flex justify-content-center text-center">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static 'images/wineicon.webp' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          Wine Quality Predictor
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav my-2">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'modelInfo' %}">Model info</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</nav>

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="row fixed overflow mt-3">
+        <div class="col-4">
+        <nav id="navbar-example11" style="font-size: 140%;" class="h-100 flex-column align-items-stretch pe-4">
+            <nav class="nav nav-pills flex-column">
+            <a class="nav-link" href="#item-1">Fixed acidity </a>
+            <a class="nav-link" href="#item-2">Volatile acidity</a>
+            <a class="nav-link" href="#item-3">Citric acid</a>
+            <a class="nav-link" href="#item-4">Residual sugar</a>
+            <a class="nav-link" href="#item-5">Chlorides</a>
+            <a class="nav-link" href="#item-6">Free sulfur dioxide</a>
+            <a class="nav-link" href="#item-7">Total sulfur doixide</a>
+            <a class="nav-link" href="#item-8">Density</a>
+            <a class="nav-link" href="#item-9">pH</a>
+            <a class="nav-link" href="#item-10">Sulphate</a>
+            <a class="nav-link" href="#item-11">Alcohol</a>
+        </nav>
+        </div>
+    
+        <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example11" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+            <h4 style="font-size: 140%; font-family: 'Arial', sans-serif;">Several important factors determine whether wine is classified as good or bad. These elements, which include alcohol percentage, acidity, and sugar content, either directly or indirectly affect the wine's quality. Although we concentrate on 11, there may be more or less. Analyzing these elements reveals their relationship and impact on the final wine product.</h4>
+            <br>
+            <div id="item-1">
+            <h4>Fixed acidity </h4>
+            <p>Wine's non-volatile acids, chiefly tartaric acid, are referred to as fixed acidity. It enhances the wine's overall flavour and perceived quality. Elevated concentrations can offer harmony and structure, but overindulgence can result in an acidic or harsh flavour.</p>
+            </div>
+
+            <div id="item-2">
+            <h4>Volatile acidity</h4>
+            <p>This quantifies the amount of volatile acids, mainly acetic acid, which, in high concentrations, can have a vinegary taste and smell. In moderation, volatile acidity can add complexity to wine; however, too much of it is usually viewed as a fault.Units here are g/dm³</p>
+            </div>
+
+            <div id="item-3">
+            <h4>Citric acid</h4>
+            <p>Citric acid, which is present in small amounts in wines, can add tang and a citrusy flavour as well as freshness. When present in moderation, it can enhance the overall harmony and perceived calibre.</p>
+            </div>
+
+            <div id="item-4">
+            <h4>Residual sugar</h4>
+            <p>The term "residual sugar" describes the naturally occurring grape sugars that are left in the wine after fermentation. It influences the wine's degree of sweetness. Low residual sugar content is ideal for dry wines, while higher residual sugar content enhances the perception of quality in some sweeter wines.</p>
+            </div>
+
+            <div id="item-5">
+            <h4>Chlorides</h4>
+            <p>The way that wine tastes can be influenced by chloride ions. Elevated levels of chloride can give most wine styles an unfavourable taste of salt.Units here are g/dm³</p>
+            </div>
+
+            <div id="item-6">
+            <h4>Free sulfur dioxide</h4>
+            <p>Free sulphur dioxide is a substance that preserves and protects wine. It aids in avoiding oxidation and spoiling. Steady levels are necessary for the quality and stability of wine.Having units mg/dm³</p>
+            </div>
+
+            <div id="item-7">
+            <h4>Total sulfur doixide</h4>
+            <p> The wine's overall sulphur dioxide content. Together with protecting the wine, it combines with other substances to affect the wine's ageing potential and aroma. Nevertheless, too much can ruin the flavour and scent of the wine.They also have units mg/dm³</p>
+            </div>
+
+            <div id="item-8">
+            <h4>Density</h4>
+            <p>The mass of the wine per volume is determined by its density. It may have to do with the wine's mouthfeel and body. A fuller-bodied wine, which some people may associate with higher quality, can be indicated by a higher density.Around 0.995 to 0.997 g/cm³</p>
+            </div>
+
+            <div id="item-9">
+            <h4>pH</h4>
+            <p>This gauges the wine's basicity or acidity. It affects the microbial activity, stability, and perceived flavour of the wine. A stable and well-rounded wine requires a pH balance.pH has no units .</p>
+            </div>
+
+            <div id="item-10">
+            <h4>Sulphate</h4>
+            <p>Wine is preservatively enhanced with sulphates, which are typically added as potassium or sodium salts. They stop oxidation and microbial deterioration. Sulphates must be used in moderation because too much of them can adversely impact flavour and aroma.</p>
+            </div>
+
+            <div id="item-11">
+            <h4>Alcohol</h4>
+            <p>The body, mouthfeel, and perceived quality of a wine are all strongly influenced by its alcohol content. It balances the wine, affects its potential to age, and enhances the overall mouthfeel.Can range from 10.5% to 12.5% ABV (Alcohol by Volume).</p>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock content %}

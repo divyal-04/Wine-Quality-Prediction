@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .left-container {
+        flex: 1;
+        background-color: #B28CE8;
+        padding: 20px;
+        margin-right: 15px;
+    }
+
+    .right-container {
+        flex: 1;
+        background-color: #84D6C9;
+        padding: 20px;
+        margin-left: 15px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    h3 {
+        margin-top: 20px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+</style>
+
+<div class="container mt-1">
+    <div style="border-radius: 30px;" class="left-container ">
+        <h2>Understanding the RandomForestClassifier Model</h2>
+        <p>
+            The RandomForestClassifier model generates an ensemble of decision trees using random feature subsets and varies the subsets of data on which it is trained.         </p>
+        <h3>How it Works....</h3>
+        <ul>
+            <li>Decision Trees: There are several decision trees in the Random Forest model. Random subsets of the training data and features are used to train each decision tree.</li>
+            <li>Randomness: Bootstrapping and Feature Selection introduce randomness, aiding in reducing overfitting and decorrelating the trees.</li>
+            <li>Voting/Averaging: Every tree in the forest makes a prediction about the class to which it believes a new sample will belong when it is passed through. When it comes to classification tasks, all trees vote equally to determine the final prediction, which is determined by majority vote. It could be the average of each tree's predictions for regression tasks.</li>
+        </ul>
+    </div>
+
+    <div  style="border-radius: 30px;" class="right-container">
+        <h2>Project Overview</h2>
+        <p>
+            Using 12 attributes, including wine quality itself, a Kaggle dataset was created to predict wine quality, which is what this project uses. Which is available at <a href="https://www.kaggle.com/datasets/yasserh/wine-quality-dataset" target="_blank">DataSet</a>.       </p>
+        <h3>Data Analysis</h3>
+        <p>
+            <u>Seaborn</u> and <u> matplotlib</u> libraries were used to visualise relationships between wine quality and the other 11 attributes in order to improve understanding.        </p>
+        <h3>Model Evaluation</h3>
+        <p>
+            The dataset was split into <b>80% for training </b> and <b> 20% for testing</b>. The model achieved approximately <b> 93% accuracy</b> when tested on the 20% reserved for testing.
+        </p>
+        <h3>Model Validation</h3>
+        <p>
+            20% of the dataset was left over after testing, and this was combined back into the training set to train the model on the complete dataset. Then, using fresh, untested data for wine quality classification, the trained model was verified.        </p>
+        <h3>Code Availability</h3>
+        <p>
+            For those interested, the code is freely available on my GitHub page at <a href="https://github.com/divyal-04" target="_blank">Code</a>. Feel free to explore and experiment with it!
+        </p>
+    </div>
+</div>
+{% endblock content %}
